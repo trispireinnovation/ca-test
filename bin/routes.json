@@ -1,0 +1,4 @@
+{
+  "/weather/all": "/weather",
+  "/weather/:id": "/weather?city=:id"
+}

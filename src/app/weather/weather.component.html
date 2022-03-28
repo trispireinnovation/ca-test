@@ -1,0 +1,6 @@
+<h1>Current Weather for ALL Cities</h1>
+<div *ngFor="let loc of allLocations" style="float: left; margin-right: 100px">
+  <h2>{{loc.city}}</h2>
+  <div>{{loc.visibility}}</div>
+  <div>currently {{loc.temp}}</div>
+</div>

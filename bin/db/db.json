@@ -1,0 +1,7 @@
+{
+  "weather": [
+    {"city": "Chicago", "temp": 45, "visibility": "cloudy"},
+    {"city": "Dallas", "temp": 78, "visibility": "foggy"},
+    {"city": "Scottsdale", "temp": 87, "visibility": "sunny"}
+  ]
+}
