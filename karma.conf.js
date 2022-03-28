@@ -10,7 +10,8 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('@angular-devkit/build-angular/plugins/karma')
+      require('@angular-devkit/build-angular/plugins/karma'),
+      require('karma-spec-reporter')
     ],
     client: {
       jasmine: {
@@ -28,17 +29,25 @@ module.exports = function (config) {
       dir: require('path').join(__dirname, './coverage/ca-test'),
       subdir: '.',
       reporters: [
-        { type: 'html' },
-        { type: 'text-summary' }
+        {type: 'html'},
+        {type: 'text-summary'}
       ]
     },
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['spec'],
+    specReporter: {
+      suppressErrorSummary: true, // do not print error summary
+      suppressFailed: false,      // do not print information about failed tests
+      suppressPassed: false,      // do not print information about passed tests
+      suppressSkipped: true,      // do not print information about skipped tests
+      showSpecTiming: true,      // print the time elapsed for each spec
+      failFast: true
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: true,
-    browsers: ['Chrome'],
-    singleRun: false,
-    restartOnFileChange: true
+    autoWatch: false,
+    browsers: ['ChromeHeadless'],
+    singleRun: true,
+    restartOnFileChange: false
   });
 };
